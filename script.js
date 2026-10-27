@@ -27,6 +27,61 @@
   });
 })();
 
+// Scroll reveal: fade content up as it enters the screen. Anything already on screen
+// at load stays visible, and nothing is hidden when motion is reduced or unsupported.
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Groups whose children appear one after another (small stagger).
+  var staggered = ['.strip-in > p', '.dishes > li', '.quotes > .quote', '.grid > figure', '.visit-list > div', '.drinks > div'];
+  // Single blocks.
+  var singles = ['.section-head', '.course > h3', '.course-photo', '.wine-scroll', '.allergy',
+    '.story-photo', '.story-copy', '.motto', '.visit-copy > h2', '.visit-copy > p', '.visit-photo', '.footer-in'];
+
+  var items = [];
+  staggered.forEach(function (sel) {
+    var groups = new Map();
+    document.querySelectorAll(sel).forEach(function (el) {
+      var n = groups.get(el.parentElement) || 0;
+      el.style.setProperty('--reveal-delay', Math.min(n, 6) * 0.07 + 's');
+      groups.set(el.parentElement, n + 1);
+      items.push(el);
+    });
+  });
+  singles.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) { items.push(el); });
+  });
+
+  var fold = window.innerHeight;
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+  items.forEach(function (el) {
+    if (el.getBoundingClientRect().top < fold) return; // already visible: leave it alone
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+  document.documentElement.classList.add('reveal-on');
+
+  // Jumping via the menu or nav links: show the target section straight away.
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!link) return;
+    var target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    target.querySelectorAll('.reveal').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top - target.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible');
+    });
+  });
+})();
+
 // Gallery lightbox: click (or Enter/Space) a photo to view it large; arrows, swipe and Esc to navigate.
 (function () {
   var box = document.getElementById('lightbox');
