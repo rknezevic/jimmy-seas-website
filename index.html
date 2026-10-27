@@ -404,6 +404,16 @@
   </div>
 </footer>
 
+<dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
+  <figure class="lb-figure">
+    <img id="lb-img" src="" alt="">
+    <figcaption><span id="lb-caption"></span> <span id="lb-count" class="lb-count"></span></figcaption>
+  </figure>
+  <button type="button" class="lb-btn lb-close" data-lb="close" aria-label="Close photo">&times;</button>
+  <button type="button" class="lb-btn lb-prev" data-lb="prev" aria-label="Previous photo">&#8249;</button>
+  <button type="button" class="lb-btn lb-next" data-lb="next" aria-label="Next photo">&#8250;</button>
+</dialog>
+
 <script src="script.js"></script>
 </body>
 </html>

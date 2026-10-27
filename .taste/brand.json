@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "foundation": {
+    "strategy": "preserve",
+    "existingAssets": [
+      "site/styles.css :root token set — --cloth #fbfaf8, --panel #f3efe9, --ink #241c19, --muted #6e615a, --line #e4dcd4, --sauce #8c2320, --sauce-soft #f6e6e2, --basil #44613d, --pan-hi #e9eaec, --pan-lo #9a9da3, --shadow rgba(36,28,25,.18)",
+      "site/styles.css dark theme token set — --cloth #171312, --panel #211b19, --ink #f2ece6, --muted #b5a89f, --line #352b27, --sauce #d65a4c, --sauce-ink #1a0e0c, --sauce-soft #34201d, --basil #97b98a, --pan-hi #c9ccd1, --pan-lo #6d7076, applied via prefers-color-scheme and :root[data-theme=dark]",
+      "site/index.html Google Fonts link loading Young Serif (display) and Public Sans 400/500/600/700 + italic 400",
+      "site/images/garlic-seal.png — garlic seal mark, used as favicon, topbar/footer lockup and the story motto badge",
+      "site/images/hero-shrimp-pesto.jpg plus 25 further owned restaurant photographs in site/images (dishes, dining room, storefront, sign, drinks)",
+      "site/styles.css layout system — centred --wrap 1180px column, --radius 10px, modular --step--1 through --step-4 scale with clamp()",
+      "site/styles.css .pan / .pan-dish / .pan-handle — round aluminium pan frame with a protruding handle around the hero photograph",
+      "site/script.js — IntersectionObserver scroll-spy that marks the active course in .menu-nav and auto-centres it"
+    ],
+    "assetActions": [
+      {
+        "asset": "Garlic seal mark (site/images/garlic-seal.png)",
+        "action": "protect",
+        "reason": "The restaurant's only real logo, already the favicon, header lockup and the motto badge; the brief locks it and no replacement exists."
+      },
+      {
+        "asset": "Sauce red --sauce #8c2320 / dark #d65a4c",
+        "action": "protect",
+        "reason": "Established brand accent drawn from the marinara and the menu covers; it is the page's only chromatic signal and the brief forbids changing it."
+      },
+      {
+        "asset": "Young Serif (display) + Public Sans (body)",
+        "action": "protect",
+        "reason": "Already loaded and in use across every heading and paragraph; the brief locks the typefaces, and Young Serif's heavy slab-ish warmth is exactly the handmade trattoria register the reference set calls for."
+      },
+      {
+        "asset": "Warm paper neutrals --cloth / --panel and their dark counterparts",
+        "action": "preserve",
+        "reason": "They give the tablecloth-and-bread-paper ground the brief wants, and they are temperature-compatible with the sauce accent."
+      },
+      {
+        "asset": "Hairline colour --line #e4dcd4 / dark #352b27",
+        "action": "preserve",
+        "reason": "It stays the decorative divider under menu price rows and the footer band, where it separates comparable data rather than carrying control affordance; a darker derived tone handles control outlines so focus and input borders stay legible."
+      },
+      {
+        "asset": "Aluminium pan frame with handle (.pan / .pan-dish / .pan-handle)",
+        "action": "evolve",
+        "reason": "It is the one device that states the proposition literally (served in the pan it was cooked in). It stays the hero geometry, gains a notched/offset corner relative in the story and visit photo frames echoed from the ritovex and meridian references, and becomes the reveal geometry for the hero image."
+      },
+      {
+        "asset": "26 owned restaurant photographs in site/images",
+        "action": "preserve",
+        "reason": "Real, specific, on-brand food and place imagery; the brief forbids new or stock photography and these already carry the atmosphere the references achieve with licensed photos."
+      },
+      {
+        "asset": "10px radius family (--radius)",
+        "action": "evolve",
+        "reason": "The references use a clearly larger, softer card radius with one notched corner on media; the family is kept but widened into a small/medium/large set so cards and media read as the reference surfaces rather than flat 10px boxes."
+      },
+      {
+        "asset": "IntersectionObserver scroll-spy in site/script.js",
+        "action": "evolve",
+        "reason": "It already works and the brief keeps it; the same observer pattern is extended to own the scroll reveals, with separate observers so spy state and reveal state cannot interfere."
+      },
+      {
+        "asset": "Basil green --basil #44613d / dark #97b98a",
+        "action": "preserve",
+        "reason": "Already present and useful as a quiet secondary for dietary and availability notes; it is kept subordinate so the page keeps a single chromatic beacon."
+      },
+      {
+        "asset": "Dedicated wordmark lockup beyond the text treatment",
+        "action": "create",
+        "reason": "No drawn wordmark exists; the identity is the seal plus Young Serif text, so the wordmark stays an honest text treatment (Young Serif 'Jimmy Seas' with a Public Sans uppercase 'Pan Pasta · Oak Bluffs' subline) rather than an invented logotype."
+      }
+    ],
+    "lockedDecisions": [
+      "Young Serif remains the display face and Public Sans the body face, loaded from the existing Google Fonts link; no new families are added.",
+      "--sauce #8c2320 (light) and #d65a4c (dark) remain the single brand accent, used for the Call action, focus rings, the active course indicator and the House Specials feature treatment.",
+      "The garlic seal PNG remains the mark in the header, footer and story motto, and remains the favicon; it is never redrawn or replaced with an SVG substitute.",
+      "The warm paper neutrals (--cloth, --panel) and the --line hairline stay; dark mode remains a real independent set, not an inversion.",
+      "Only the 26 existing photographs in site/images are used; no stock or generated imagery of this real restaurant.",
+      "Hand-written HTML, CSS and vanilla JS only. No framework, no build step, no new runtime dependency, therefore no icon package: the few needed glyphs are text characters (★, ·, →) and the existing seal, not hand-drawn brand SVGs.",
+      "All factual content stays verbatim: menu items and prices, hours, season, address, phone, Instagram handle, the 4.1 / 252 Google rating and the six named review quotes.",
+      "Motion is required and visible, gated only by prefers-reduced-motion; content stays readable if JavaScript never runs."
+    ],
+    "assumptions": [
+      "The references are light, airy, generously spaced editorial compositions; their composition language (large left headline against a notched right photograph, a big photograph beside a low-sitting support paragraph, numbered rows divided by hairlines, soft wide-radius media cards on a warm off-white ground) is adopted, while their cool greys and purples are replaced by the locked warm paper and sauce palette.",
+      "The obvia footer reference is dark and the ritovex/meridian/karo sections are light, so the page keeps a mostly light sequence with the House Specials feature and the footer as the two dark anchors, preserving the references' light-to-dark rhythm without flattening it.",
+      "The references show almost no repeated divider grid outside the numbered-row section, so hairlines are reserved for menu price rows and the footer band; no global section divider system is introduced.",
+      "The karo testimonial reference centres one very large quote; with six real quotes the treatment becomes one oversized lead quote plus a quieter grid, keeping the reference's scale contrast without inventing a carousel.",
+      "Dark mode is required by the brief, so both themes are specified; the dark accent is the existing lighter #d65a4c because #8c2320 cannot carry text contrast on a near-black ground.",
+      "controlBorder is deliberately left out of locked in both themes: the brand supplies only the decorative hairline --line (#e4dcd4 light, #352b27 dark), which is intentionally faint and cannot reach the 3:1 non-text contrast an interactive border needs. The hairline is preserved in its real role as a row and band divider, and the runtime derives a darker warm-neutral control border for inputs, secondary buttons and focusable outlines so the identity is adapted rather than overridden.",
+      "accentText is left out of locked in dark mode for the same reason: #d65a4c as body-size text on the #211b19 card surface measures about 4.39:1, just under the 4.5:1 requirement, so the runtime derives a slightly lighter warm red for accent-coloured text while the locked #d65a4c is kept for the accent fill, focus ring and active indicator, where the lower non-text threshold applies.",
+      "No measured recognition data exists for the pan frame, so the signature device is recorded as existing brand usage rather than validated."
+    ]
+  },
+  "creativeDirection": {
+    "summary": "A warm, well-lit trattoria page with editorial bones: big Young Serif headlines breathing against generous warm-paper space, real photographs of real food held in soft wide-radius frames with one notched corner, prices set in clean Public Sans rows, and a single marinara red that only ever means act now. It should read like a confident menu card left on a white tablecloth, not like a template with a restaurant dropped into it.",
+    "traits": [
+      {
+        "quality": "Appetite-led: photographs of the actual food are the largest elements on the page and are never cropped into decorative slivers",
+        "boundary": "not a photo wall where every image is the same size and nothing is chosen as the lead"
+      },
+      {
+        "quality": "Generously spaced editorial typography, with headlines allowed to run to two or three deliberate lines at the reference's monumental scale",
+        "boundary": "not shrunk into a safe uniform 32px heading scale to make everything fit"
+      },
+      {
+        "quality": "Legible under a thumb at dusk on a phone, with the phone number reachable from any scroll position",
+        "boundary": "not a desktop composition squeezed down with an off-canvas menu hiding the only way to call"
+      },
+      {
+        "quality": "Handmade warmth carried by paper neutrals, the seal and the pan frame rather than by ornament",
+        "boundary": "not checked tablecloths, script fonts, faux-chalkboard textures or clip-art tomatoes"
+      },
+      {
+        "quality": "Single-accent discipline: marinara red marks the primary action, focus, the active course and the specials feature, and nothing else",
+        "boundary": "not a page where each course card picks a different colour"
+      }
+    ],
+    "productiveTension": "Old-school, garlic-heavy, unpretentious food presented through a restrained contemporary editorial layout: the warmth comes from the photography, the seal and the copy, while the structure stays quiet and modern enough that a 170-line menu is genuinely easy to read on a phone.",
+    "signatureDevice": {
+      "description": "The aluminium pan frame, already built into the hero as .pan / .pan-dish / .pan-handle: a circular pan body holding the dish photograph with a short handle protruding at the lower left and a one-line caption beneath. Its flat relative, used for the story and visit photographs, is the reference's notched-corner media frame — a large soft-radius photo with a single corner cut square, echoing the pan handle's break in an otherwise continuous edge.",
+      "status": "existing",
+      "invariants": [
+        "Exactly one true circular pan frame per page, and it is the hero dish; it is never repeated down the page.",
+        "The handle always protrudes from the lower-left quadrant and always reads as aluminium using --pan-hi / --pan-lo, never tinted with the sauce accent.",
+        "The photograph inside the pan is always a real dish from site/images, always with a one-line caption naming the dish, never a person or a storefront.",
+        "The notched-corner media frame cuts exactly one corner, at the side nearest the adjacent text column, and the notch size stays constant across breakpoints relative to the frame radius.",
+        "Gallery mosaic images keep plain soft-radius frames; neither the pan nor the notch is applied there."
+      ]
+    },
+    "restraint": "Chrome is almost absent: no card gets a shadow heavier than a single soft ambient drop, no section gets a decorative divider, and no surface uses both a border and a fill. Borders appear only where they separate comparable data (menu price rows, the footer band) or where a control needs an edge (inputs, secondary buttons); everywhere else, separation is done with space and surface tone. The accent appears at most four times in any viewport.",
+    "avoid": [
+      "Checked tablecloths, chalkboard textures, script or handwriting fonts, tomato and chef-hat clip art",
+      "Hand-drawn SVG icon sets or decorative blobs and squiggles standing in for photography",
+      "Gradients over photographs, heavy drop shadows, glassmorphism, or a full-bleed hero background image with text floating on it",
+      "Giving each menu course its own colour, border style or card treatment",
+      "Stock photography of generic pasta, and any imagery not already in site/images",
+      "Hiding the phone number, hours or menu behind a hover, an accordion on desktop, or an off-canvas drawer",
+      "Equal-weight sections where everything is a 3-column card grid",
+      "Shrinking the display scale so that headlines match body-adjacent sizes",
+      "Using the faint --line hairline as a control or focus border where it cannot be seen"
+    ]
+  },
+  "colorPalette": [
+    {
+      "name": "Light Canvas",
+      "value": "#FBFAF8",
+      "usage": "Dominant. canvas token in the light theme."
+    },
+    {
+      "name": "Light Surface",
+      "value": "#FFFFFF",
+      "usage": "Dominant. surface token in the light theme."
+    },
+    {
+      "name": "Light Surface alt",
+      "value": "#F3EFE9",
+      "usage": "Supporting. surface alt token in the light theme."
+    },
+    {
+      "name": "Light Text",
+      "value": "#241C19",
+      "usage": "Semantic. text token in the light theme."
+    },
+    {
+      "name": "Light Text muted",
+      "value": "#6E615A",
+      "usage": "Semantic. text muted token in the light theme."
+    },
+    {
+      "name": "Light Divider",
+      "value": "#E4DCD4",
+      "usage": "Semantic. divider token in the light theme."
+    },
+    {
+      "name": "Light Control border",
+      "value": "#73665F",
+      "usage": "Semantic. control border token in the light theme."
+    },
+    {
+      "name": "Light Accent",
+      "value": "#8C2320",
+      "usage": "Sparse accent. accent token in the light theme."
+    },
+    {
+      "name": "Light Accent hover",
+      "value": "#75050B",
+      "usage": "Semantic. accent hover token in the light theme."
+    },
+    {
+      "name": "Light On accent",
+      "value": "#FFFFFF",
+      "usage": "Semantic. on accent token in the light theme."
+    },
+    {
+      "name": "Light Accent text",
+      "value": "#8C2320",
+      "usage": "Sparse accent. accent text token in the light theme."
+    },
+    {
+      "name": "Light Focus ring",
+      "value": "#8C2320",
+      "usage": "Semantic. focus ring token in the light theme."
+    },
+    {
+      "name": "Dark Canvas",
+      "value": "#171312",
+      "usage": "Dominant. canvas token in the dark theme."
+    },
+    {
+      "name": "Dark Surface",
+      "value": "#211B19",
+      "usage": "Dominant. surface token in the dark theme."
+    },
+    {
+      "name": "Dark Surface alt",
+      "value": "#1E1817",
+      "usage": "Supporting. surface alt token in the dark theme."
+    },
+    {
+      "name": "Dark Text",
+      "value": "#F2ECE6",
+      "usage": "Semantic. text token in the dark theme."
+    },
+    {
+      "name": "Dark Text muted",
+      "value": "#B5A89F",
+      "usage": "Semantic. text muted token in the dark theme."
+    },
+    {
+      "name": "Dark Divider",
+      "value": "#352B27",
+      "usage": "Semantic. divider token in the dark theme."
+    },
+    {
+      "name": "Dark Control border",
+      "value": "#90837B",
+      "usage": "Semantic. control border token in the dark theme."
+    },
+    {
+      "name": "Dark Accent",
+      "value": "#D65A4C",
+      "usage": "Sparse accent. accent token in the dark theme."
+    },
+    {
+      "name": "Dark Accent hover",
+      "value": "#EF7061",
+      "usage": "Semantic. accent hover token in the dark theme."
+    },
+    {
+      "name": "Dark On accent",
+      "value": "#1A0E0C",
+      "usage": "Semantic. on accent token in the dark theme."
+    },
+    {
+      "name": "Dark Accent text",
+      "value": "#F87969",
+      "usage": "Sparse accent. accent text token in the dark theme."
+    },
+    {
+      "name": "Dark Focus ring",
+      "value": "#D65A4C",
+      "usage": "Semantic. focus ring token in the dark theme."
+    }
+  ],
+  "typefaces": [
+    {
+      "family": "Young Serif",
+      "source": "Google Fonts, already loaded in site/index.html via the existing fonts.googleapis.com css2 link; official specimen https://fonts.google.com/specimen/Young+Serif, files and OFL at https://github.com/google/fonts/tree/main/ofl/youngserif",
+      "roles": [
+        "hero headline",
+        "section headings h2",
+        "course headings h3",
+        "the oversized lead review quote",
+        "the story motto"
+      ],
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Public Sans",
+      "source": "Google Fonts, already loaded in site/index.html via the existing fonts.googleapis.com css2 link; official specimen https://fonts.google.com/specimen/Public+Sans, files and OFL at https://github.com/google/fonts/tree/main/ofl/publicsans",
+      "roles": [
+        "body and lede copy",
+        "eyebrows and uppercase labels",
+        "menu item names, descriptions and prices",
+        "buttons and navigation",
+        "captions, attributions and the definition lists"
+      ],
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ]
+    }
+  ],
+  "interfaceDirection": "Spacing rhythm: an 8px base with a named scale of 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128. Section padding runs 96–128px vertical on desktop and 56–72px on mobile, so sections separate by air alone. Content widths: keep the existing 1180px wrap as the outer measure, with a 640–720px measure for prose and the menu's sauce note, and a 1180px full-bleed-within-wrap band for the gallery mosaic and the specials feature; body copy never exceeds about 72 characters. Section density follows the references: the hero and story are low-density (one headline, one paragraph, one large photograph), the menu is high-density by necessity and earns its density through rhythm rather than decoration, and the strip, reviews and visit sit in between. Surface hierarchy: canvas is the warm cloth, raised content sits on surface (pure white in light, #211B19 in dark), and secondary bands use surfaceAlt; the sequence is light canvas → light cards → one dark feature band at House Specials → light again → dark footer, preserving the references' light-to-dark alternation. Radius family: 8px for controls and chips, 16px for cards and small media, 24px for large media frames, and a full circle only for the hero pan; the signature notch replaces a single 24px corner with a square cut on the story and visit frames. Shadow and border restraint: at most one shadow level, 0 2px 8px plus 0 12px 32px of the --shadow token at low opacity, used on raised cards and media only; the faint divider hairline is used under menu price rows and across the footer band, while the derived darker control border is used on inputs, secondary buttons and other focusable edges; never a border and a shadow on the same element. Cards: the menu course is the main card — a surface panel with 32px desktop / 20px mobile padding, a Young Serif course heading, then rows of item name + leader + price with a divider hairline below each row; the gallery figures and the review quotes are the other two card kinds, and ordinary prose (story paragraphs, visit copy) is never boxed. Card sizes vary by content, with Pasta and Beer full width, House Specials full width on the dark feature surface, and Appetizers, Salads, Cocktails and Wine in two columns, but all share the same radius, padding scale and surface depth. Controls: the primary Call button is accent-filled with onAccent text, 48px minimum height, 999px pill or 8px radius consistently applied; secondary is a transparent button with a derived control-border outline; hover darkens the fill by about 8% and lifts by 1px, active presses 1px down, focus-visible draws a 3px focusRing offset 3px, and disabled drops to 45% opacity with no pointer. The sticky header condenses on scroll from 84px to 64px with the subline fading out, and the course nav keeps its horizontal scroll with the active item in accent text and a 2px accent underline. Tap targets are 44px minimum everywhere. Icons: no icon dependency is added; the only glyphs are the existing garlic seal, text stars in the rating, middots and a text arrow, matching the references' near-iconless composition.",
+  "imageDirection": {
+    "summary": "The existing 26 photographs are the page's entire visual argument: plated pasta shot close and warm, the dining room, the storefront and the hand-painted sign. They are presented large, uncropped in spirit, and captioned in plain language, following the references' habit of letting one big photograph carry a section while the type stays quiet beside it.",
+    "subjects": [
+      "Dishes in their aluminium pans shot from above or three-quarter, close enough to read the sauce and the garlic",
+      "The roasted garlic and bread basket as the proof of the house signature",
+      "The dining room and the booths along the front windows, for atmosphere",
+      "The Kennebec Avenue storefront in summer and winter, and the hand-painted Little Italy Cafe sign, for findability",
+      "Drinks: the East Chop ale and the porch cocktail, as the lighter notes in the mosaic"
+    ],
+    "treatment": "No filters, no duotone, no gradient scrims over photographs. Frames: circular pan for the hero dish, 24px-radius with one square-cut corner for the story and visit photographs, 16px radius for gallery figures. The gallery stays a varied mosaic with tall and wide cells so no two neighbours share a shape, with captions in Public Sans small muted text sitting outside and below the frame, never overlaid on the image. All images keep width and height attributes to prevent layout shift, lazy-load below the fold, keep their existing descriptive alt text, and the hero image loads eagerly with fetchpriority high. Media reveals animate the frame and the image together, never a filter or blur.",
+    "avoid": [
+      "Any photograph not already in site/images, including stock pasta",
+      "Text set directly on top of a photograph without a solid surface behind it",
+      "Blur, sepia, heavy warmth filters or black-and-white conversion",
+      "Uniform square crops that flatten the mosaic into a grid of identical tiles",
+      "Decorative SVG illustration or abstract shapes used where a photograph belongs",
+      "Parallax that pushes an image past its frame or causes layout shift"
+    ]
+  },
+  "motionDirection": {
+    "summary": "Motion explains where things came from. The hero assembles once on load in the reference's reading order, later sections reveal with geometry borrowed from their own composition rather than a single repeated fade-up, and every control answers a touch within a quarter second. Reveals run once, never replay, and never leave content hidden.",
+    "principles": [
+      "Hero entrance on load: establish reading order by staggering the eyebrow, headline, lede, buttons and fact list upward 16px from opacity 0 while the pan frame scales from 0.96 and fades in 120ms behind them; 560-680ms per element, 80ms stagger capped at 240ms total, cubic-bezier(0.22, 1, 0.36, 1) ease-out; the pan handle follows the pan body, never leads it.",
+      "Scroll reveal for the story section: tie the photograph to its paragraph by sliding the notched media frame 24px in from its outer edge while the eyebrow, heading and paragraphs rise 16px, triggered when the group's top crosses a 0 threshold with a 120px positive bottom rootMargin; 600-760ms, ease-out, observer disconnected on first intersection so it cannot replay on scroll-up or resize.",
+      "Scroll reveal for the gallery mosaic: introduce the photographs as a short sequence rather than a block, each figure fading in with a 1.03 to 1.0 scale inside its own frame, observed per figure and staggered 60-90ms in DOM order with the stagger reset per visual row so a fast scroll never queues more than 240ms of delay; 480-620ms, ease-out.",
+      "Scroll reveal for the review quotes: signal that the oversized lead quote is the anchor by revealing it first with a 20px rise, then the rating link, then the smaller quotes in a 70ms stagger; 520-640ms, ease-out, each group observed independently so a partially visible section never hides what is already on screen.",
+      "Menu course rows: make the course feel like it is being read out by revealing the course card as one unit with a 12px rise rather than animating individual price rows, so dense data never flickers; 450-560ms, ease-out, one observer per course card.",
+      "Sticky header condense: confirm scroll depth by transitioning header height, padding and subline opacity when scrollY passes 80px; 180-220ms, ease-in-out, with the header itself never placed inside a transformed ancestor.",
+      "Course nav active state: show which course is on screen by transitioning the active link's colour and the 2px underline's transform-origin scale; 140-200ms, ease-out, driven by the existing scroll-spy observer and kept separate from the reveal observers.",
+      "Button and link feedback: acknowledge the pointer by transitioning background-color, border-color and a 1px translateY on hover and active, and drawing the focus ring instantly on focus-visible; 120-200ms, ease-out, on explicitly listed properties only.",
+      "Reduced motion: when prefers-reduced-motion is reduce, skip all entrance and reveal animations so every element renders in its final visible state immediately, keep only colour transitions under 120ms on controls, and cancel any owned in-flight animations and disconnect the reveal observers when the preference changes mid-playback."
+    ],
+    "avoid": [
+      "transition: all, and animating width, height, top, left, filter, blur or large clip-paths",
+      "scale-from-zero or rotate-in entrances",
+      "A single identical fade-up applied to every section",
+      "Perpetual floating, pulsing, bouncing or looping ambient motion",
+      "Scroll-jacking, smooth-scroll hijacking, pinned sections or progress-driven timelines",
+      "Hover-only disclosure of information, including prices, hours or captions",
+      "Reveals that reset on exit, direction change, resize or rerender, or that gate interaction behind an animation",
+      "Global opacity:0 reveal classes in CSS, hiding elements already visible at load or after a restored scroll position, transforms on ancestors of the sticky header, nested reveal transforms, and cancelling animations via document.getAnimations()"
+    ]
+  },
+  "voice": {
+    "summary": "Plain, warm, first person plural, island-local. Short declarative sentences that name the food and the facts: what is in the sauce, what comes with the entrée, when the door is open, what to call. Confidence comes from specifics (clam juice, roasted garlic, the pan it was cooked in), never from adjectives. Labels are literal: Menu, Our Story, Reviews, Gallery, Visit, Call (508) 687-9804.",
+    "avoid": [
+      "Marketing superlatives: authentic, elevated, curated, world-class, unforgettable, culinary journey",
+      "Invented claims: awards, press mentions, chef credentials, visitor counts or anything beyond the real 4.1 / 252 Google rating and the six real quotes",
+      "Urgency or scarcity language, countdowns, 'book now before it's gone'",
+      "Faux-Italian affectation, exclamation marks, or quoting the restaurant's own praise back as a tagline",
+      "Second-person hype ('you deserve'), rhetorical questions as headings, and em dashes in body copy"
+    ]
+  }
+}

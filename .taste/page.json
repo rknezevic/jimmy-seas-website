@@ -1,0 +1,671 @@
+{
+  "version": 1,
+  "page": {
+    "title": "Jimmy Seas Pan Pasta",
+    "route": "/",
+    "description": "Old-school Italian on Kennebec Ave in Oak Bluffs, Martha's Vineyard. Heaping pan pastas, lobster fra diablo, frutti di mare and lots of garlic. Open daily 5 – 10 PM in season."
+  },
+  "architecture": {
+    "contract": "This page helps a hungry visitor standing in Oak Bluffs tonight read the whole Jimmy Seas menu on a phone and then call (508) 687-9804 or get walking directions to 32 Kennebec Ave.",
+    "mode": "persuade_convert",
+    "novelty": "low",
+    "grid": "12-column grid inside a 1180px wrap with 24px gutters desktop, 16px gutters mobile. Prose and the menu sauce note sit in a 7-column (about 660px) measure. Media frames span 5 to 6 columns beside text, or the full 12 columns for the specials feature and the gallery mosaic. Mobile collapses to a single column with 20px page padding. Vertical scale is 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128; sections run 112px top and bottom on desktop, 64px on mobile.",
+    "signatureRule": "Derived from the ritovex-01-hero geometry: every lead photograph is held in a frame whose outline breaks exactly once on the side facing its text column. In the hero that break is the aluminium pan handle protruding at lower left of the circular pan; in the story and visit frames it is a single square-cut corner on the 24px-radius photo, at the corner nearest the adjacent copy. The break appears once per section and never on gallery or menu media.",
+    "rhythm": "Low, high, low. Hero (one headline, one lede, one big circular dish) opens wide. The three-promise strip is a short measured band. The menu intro breathes, then the menu rows run dense for the longest stretch of the page. The specials feature is the single dark full-width photograph that breaks that density. Story and reviews return to low density with one oversized element each, the gallery runs wide and varied, visit closes with facts plus two actions, and the dark footer ends the page. Light surfaces throughout except two dark anchors: the specials feature and the footer."
+  },
+  "navigation": [
+    {
+      "label": "Menu",
+      "target": "#menu"
+    },
+    {
+      "label": "Our Story",
+      "target": "#story"
+    },
+    {
+      "label": "Reviews",
+      "target": "#reviews"
+    },
+    {
+      "label": "Gallery",
+      "target": "#gallery"
+    },
+    {
+      "label": "Visit",
+      "target": "#visit"
+    },
+    {
+      "label": "Call (508) 687-9804",
+      "target": "tel:+15086879804"
+    }
+  ],
+  "navigationDesign": {
+    "layoutCase": "reference-navigation",
+    "layout": "Reference ritovex-01-hero desktop bar, measured at 1600x971: the bar occupies the top 10.5% of the frame (about 102px) with a hairline under it and two vertical hairlines at x=20.5% and x=81.5% splitting it into three cells. Left cell holds the mark plus wordmark at x=5% (mark about 34px square, wordmark about 30px cap height). Centre cell holds five links evenly spaced between x=34% and x=67%, body size about 17px, with a 2px underline under the active link. Right cell holds a round icon chip and a short text action at x=88%. Jimmy Seas keeps this exact three-cell structure: garlic seal plus Young Serif Jimmy Seas with a Public Sans uppercase Pan Pasta · Oak Bluffs subline in the left cell, the five anchors Menu, Our Story, Reviews, Gallery, Visit in the centre cell with the accent underline marking the section on screen, and a sauce-filled pill reading Call (508) 687-9804 in the right cell. Header height 84px at rest, condensing to 64px past 80px of scroll with the subline fading out. The header is position sticky at top 0 and is never nested inside a transformed ancestor.",
+    "behavior": [
+      "Anchor links scroll to their section with native smooth scrolling and scroll-padding-top matching the condensed header height",
+      "The link for the section currently on screen takes accent colour and a 2px accent underline, driven by its own IntersectionObserver, separate from the reveal observers",
+      "Past 80px of scroll the header condenses from 84px to 64px and the wordmark subline fades out",
+      "The Call pill is present at every scroll position and at every breakpoint, never collapsed into a menu",
+      "Focus-visible on any header link or the pill draws a 3px accent focus ring offset 3px",
+      "The header background is the opaque canvas tone, never translucent over photographs"
+    ],
+    "transformation": {
+      "compact": "Reference ritovex-01-hero mobile, measured at 853x1667: bar occupies the top 9% (about 150px at 2x, about 75px CSS) with the mark plus wordmark at left x=5% and a control at right x=91%. Jimmy Seas keeps the seal plus wordmark at left, but replaces the reference hamburger with two always-visible controls so no information is hidden: a compact accent Call pill (phone glyph plus the number, 44px tall) and a Menu toggle. The toggle opens an inline panel pushed below the header listing all five anchors at 48px row height with the active row in accent; the Call pill stays visible while the panel is open. Source order, active state and action priority are unchanged.",
+      "medium": "Three-cell bar retained with the centre cell holding all five anchors at 15px and tighter spacing; the Call pill shows the number without the word Call if space is tight, and the wordmark subline hides below 900px.",
+      "expanded": "Full three-cell bar with hairline cell dividers exactly as the reference, wordmark subline visible, five centre anchors at 17px, and the Call pill reading the full Call (508) 687-9804."
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "layoutFamily": "hero",
+      "layoutCases": [
+        "ritovex-01-hero"
+      ],
+      "referenceDirectionId": "ritovex-01-hero",
+      "purpose": "State in one line what Jimmy Seas serves and how it arrives, show the dish, and offer the two things a hungry visitor needs next.",
+      "userQuestion": "What is this place and is it what I want to eat tonight?",
+      "stage": "orient",
+      "dependencies": [],
+      "evidence": [
+        "Dish photograph site/images/hero-shrimp-pesto.jpg, owned by the restaurant",
+        "Hours, season and phone number carried verbatim from the existing site and its JSON-LD Restaurant schema"
+      ],
+      "copy": {
+        "eyebrow": "Kennebec Ave · Oak Bluffs · Martha's Vineyard",
+        "heading": "Pasta served in the pan it was cooked in.",
+        "body": [
+          "An old-school Italian eatery loved by islanders and summer visitors for more than two decades. Heaping pans of pasta, local seafood, warm bread and plenty of roasted garlic.",
+          "Open daily 5 – 10 PM",
+          "Season Memorial Day – Thanksgiving",
+          "Call (508) 687-9804",
+          "Shrimp Pesto Cream, straight from the stove"
+        ],
+        "callsToAction": [
+          {
+            "label": "See the menu",
+            "target": "#menu"
+          },
+          {
+            "label": "Hours and directions",
+            "target": "#visit"
+          }
+        ]
+      },
+      "layout": "Reference ritovex-01-hero desktop, 1600x971. Below the 102px bar the hero band fills the remaining 89% of the frame. Copy column occupies x=5% to x=47% (about 42% width, 5 of 12 grid columns plus gutter), vertically centred with its block top at 29% of frame height. Order inside it: a pill-shaped eyebrow chip (height about 3.5% of frame, horizontal padding 16px, tinted surfaceAlt fill) at 29%; the headline from 36% to 55%, set in Young Serif at about 68px desktop with a hard break after the fourth word so it reads as exactly 2 lines at near-equal length; the lede at 58% to 65% in Public Sans 18px across about 85% of the copy column (2 lines); the action row at 70% to 79% with the accent-filled primary pill (width about 14% of frame) and the ghost secondary beside it. The fact list sits below the actions at 82% to 90% as 3 label-over-value pairs in a single row, labels in 12px uppercase muted, values in 17px. Media occupies x=51% to x=97.5% (about 46% width) and y=17% to y=93%, so the photo block is roughly 740x740 and dominates the right half. The reference uses a rounded rectangle with one notched corner; Jimmy Seas substitutes its locked signature frame at the same bounding box: a circular aluminium pan 92% of the block width, the dish photo filling the pan, the handle protruding from the lower-left quadrant beyond the circle, and a one-line Public Sans caption centred under the pan at 94% of frame height. Negative space between copy and media column is 4% of frame width. Section height is about 100vh desktop, min 640px.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "load",
+        "behavior": "On load the copy column assembles in reading order and the pan arrives behind it. Eyebrow, headline, lede, action row and fact list each animate opacity 0 to 1 and translateY 16px to 0, staggered 80ms in that order with total stagger capped at 240ms. The pan block starts 120ms after the eyebrow and animates opacity 0 to 1 with scale 0.96 to 1 from its own centre; the handle inherits the pan transform so it never leads the body. Nothing animates width, height or filter, and no ancestor of the sticky header is transformed.",
+        "durationMs": 620,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "All hero elements render at their final opacity and position with no transform and no delay; the pan is fully visible on first paint."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "hero_shrimp_pesto_pan",
+        "garlic_seal_mark"
+      ],
+      "transformation": {
+        "compact": "Reference ritovex-01-hero mobile, 853x1667. Single column, centre aligned: eyebrow chip at 13% of frame height, headline 18% to 28% set at about 40px in 2 lines with the same break point, lede 30% to 40% centred across 88% of width in 3 lines, action row at 43% to 50% with the two actions side by side and the primary first, fact list stacked as 3 rows of label plus value from 52% to 60%, then the pan block from 62% to 94% at 92% of viewport width with the handle still at lower left and the caption below. Content, order and both actions are unchanged; only simultaneity drops.",
+        "medium": "Two columns retained at a 48/52 split with the headline at about 52px and the fact list wrapping to two rows of label plus value under the actions.",
+        "expanded": "Full 42/46 two-column split with the headline at 68px, the fact list in one row of three, and the pan at its full 740px block."
+      }
+    },
+    {
+      "id": "included_strip",
+      "layoutFamily": "stats",
+      "layoutCases": [
+        "nubo-09-stats"
+      ],
+      "referenceDirectionId": "nubo-09-stats",
+      "purpose": "Answer the price-and-portion question before the menu, so the prices that follow read correctly.",
+      "userQuestion": "What do I actually get for the price of an entrée?",
+      "stage": "qualify",
+      "dependencies": [
+        "hero"
+      ],
+      "evidence": [
+        "Entrée inclusions, the $12 split charge and the $3 gluten-free pasta charge are the existing site's own published terms"
+      ],
+      "copy": {
+        "heading": "Every entrée comes with a house salad and fresh baked bread",
+        "body": [
+          "Salad and bread",
+          "Included with every entrée, baked fresh that day.",
+          "Split a dish",
+          "Share any pasta and add $12 for the extra salad and bread.",
+          "Gluten-free pasta",
+          "Available on any pasta dish for $3."
+        ],
+        "callsToAction": []
+      },
+      "layout": "Reference nubo-09-stats desktop, 1506x1004. The reference centres a small mark plus wordmark lockup and a 12px uppercase tagline at the top 3% to 9%, then lays a three-panel band from y=13% to y=93% across x=2% to x=98%: a left photographic panel (width 34%) with a very large numeral and uppercase label overlaid in its top-left and a 2-line uppercase note at its lower-left, a centre panel on near-white surface (width 33%) carrying a small label, a 2-line display heading, a 3-line paragraph, a dark pill action and a hairline-separated row of three small items, and a right column (width 29%) split into two stacked tinted panels each with a very large numeral, a unit word, a short hairline and a 2-line note. Jimmy Seas keeps that exact three-panel band and its 34/33/29 proportions but replaces numerals with the three real inclusions. Left photographic panel uses the roasted garlic and bread photograph with the overlay text replaced by the section heading set in Young Serif over a solid surface block at the panel's lower-left, never floating directly on the photo. Centre panel carries the Salad and bread item: Public Sans 12px uppercase label, a 2-line Young Serif statement, a 2-line note, and the hairline row of three beneath it is dropped because no third-level items exist here, recorded as a deviation. Right column holds the two stacked tinted panels for Split a dish and Gluten-free pasta, each with the amount ($12, $3) at display scale in the reference's numeral position, the label beside it, a 40px hairline and the 2-line note. Card radius 16px, one soft ambient shadow, no borders. Band height about 62% of a 1080 viewport.",
+      "motion": {
+        "purpose": "explanation",
+        "trigger": "scroll_enter",
+        "behavior": "The three panels arrive left to right so the band reads as one row being laid down: each panel animates opacity 0 to 1 and translateY 14px to 0, staggered 90ms for a 180ms total. Observed per panel with threshold 0 and rootMargin 0px 0px 120px 0px, each panel unobserved on first intersection so it never replays on scroll-up, resize or rerender. Panels already in the viewport at initialization are left visible and never hidden.",
+        "durationMs": 520,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "All three panels render visible and in place with no transform or stagger."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "roasted_garlic_bread"
+      ],
+      "transformation": {
+        "compact": "Reference nubo-09-stats mobile, 1024x1820: the same panels stack full width in source order, each about 22% of frame height, photographic panel first with its overlaid heading block, then the centre statement panel, then the two tinted amount panels. Every panel keeps its own content and the amounts stay at display scale; only the row becomes a column.",
+        "medium": "Photographic panel full width on the first row, then the centre statement and the two amount panels in a 2-column row beneath it.",
+        "expanded": "Full 34/33/29 three-panel band exactly as the desktop reference."
+      }
+    },
+    {
+      "id": "menu_intro",
+      "layoutFamily": "about",
+      "layoutCases": [
+        "fabrica-06-about"
+      ],
+      "referenceDirectionId": "fabrica-06-about",
+      "purpose": "Explain how the kitchen cooks and what the two sauces are, then hand the reader a course nav so a long menu stays navigable.",
+      "userQuestion": "How is the food made, and how do I find the part of the menu I want?",
+      "stage": "explain",
+      "dependencies": [
+        "included_strip"
+      ],
+      "evidence": [
+        "The white and red sauce definitions and the cooked-to-order description are the restaurant's own existing menu copy"
+      ],
+      "copy": {
+        "eyebrow": "The Menu",
+        "heading": "Cooked to order, al dente, one pan at a time",
+        "body": [
+          "Our white sauce is extra-virgin olive oil, chopped garlic and fresh clam juice. Tomatoes, fresh herbs and spices make our red sauce."
+        ],
+        "callsToAction": [
+          {
+            "label": "Appetizers",
+            "target": "#m-appetizers"
+          },
+          {
+            "label": "Salads",
+            "target": "#m-salads"
+          },
+          {
+            "label": "Pasta",
+            "target": "#m-pasta"
+          },
+          {
+            "label": "House Specials",
+            "target": "#m-specials"
+          },
+          {
+            "label": "Cocktails",
+            "target": "#m-cocktails"
+          },
+          {
+            "label": "Wine",
+            "target": "#m-wine"
+          },
+          {
+            "label": "Beer and Soft Drinks",
+            "target": "#m-beer"
+          }
+        ]
+      },
+      "layout": "Reference fabrica-06-about desktop, 1506x1045. Below its media band the composition starts at y=40%: a small left label with a round glyph at x=3%, baseline aligned with a wordmark at x=26%; the display heading runs from x=26% to x=75%, y=46% to y=63%, as exactly 2 lines at about 72px with the first phrase in full-strength ink and the remainder in a lighter tone; a 2-line support paragraph sits at x=26% to x=56%, y=64% to y=69% at 16px; then a full-width row of four equal cards from x=2.5% to x=97.5%, y=78% to y=96%, each card on white with 16px radius, a small index numeral at its top right, a progress dot group at its top left, a 56px square thumbnail at its lower left and two lines of text beside it. Jimmy Seas keeps all of this. Left label becomes the uppercase eyebrow The Menu with the garlic seal as the round glyph. The heading keeps the 2-line break and the two-tone treatment, with the second line in muted ink. The support paragraph carries the sauce note across the same 30% measure. The four-card row becomes the horizontally scrollable course nav: seven chips instead of four cards, same 16px radius and white surface, same row position and height, each chip holding the course name plus its item count; the chip for the course on screen takes accent text and a 2px accent underline. Chips overflow horizontally with native scrolling and the active chip auto-centres. The nav becomes position sticky under the header once the menu section is in view.",
+      "motion": {
+        "purpose": "explanation",
+        "trigger": "scroll_enter",
+        "behavior": "Heading and sauce note rise first as one group (opacity 0 to 1, translateY 16px to 0), then the chip row wipes in as a short sequence with each chip at 60ms stagger capped at 240ms total, so the nav reads as being dealt out left to right. Two observers, one for the text group and one for the chip row, each threshold 0 with rootMargin 0px 0px 120px 0px and unobserved on first intersection. Separately, the active chip's colour and 2px underline transition in 160ms as the scroll-spy observer updates; that state transition is independent of the reveal and keeps working after the reveal is done.",
+        "durationMs": 560,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "Heading, note and all chips render visible in place; the active-chip colour change still applies instantly with no underline scaling."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "garlic_seal_mark"
+      ],
+      "transformation": {
+        "compact": "No verified mobile reference for fabrica-06-about, so derived and to be visually tested: eyebrow with seal at top left, heading at about 34px keeping its 2-line break and two-tone treatment, sauce note full width beneath it, then the seven chips in one horizontally scrolling row at 44px tall pinned under the header. All seven chips remain reachable by swipe and the active chip auto-centres; no course is removed and the nav is never collapsed behind a toggle.",
+        "medium": "Heading at about 52px over a 60% measure, sauce note beneath, chip row full width with horizontal scroll and the sticky behaviour active.",
+        "expanded": "Full reference geometry: left label column, 72px two-tone 2-line heading, 30%-wide sauce note and the seven-chip row spanning 95% of the wrap."
+      }
+    },
+    {
+      "id": "menu_courses",
+      "layoutFamily": "feature",
+      "layoutCases": [
+        "ritovex-04-services"
+      ],
+      "referenceDirectionId": "ritovex-04-services",
+      "purpose": "Present the full priced menu so a visitor can decide what to order without leaving the page.",
+      "userQuestion": "What can I order and what does it cost?",
+      "stage": "evaluate",
+      "dependencies": [
+        "menu_intro"
+      ],
+      "evidence": [
+        "Every item, description and price is carried verbatim from the existing site menu; nothing is added, repriced or reworded"
+      ],
+      "copy": {
+        "heading": "Appetizers, salads, pasta and the bar",
+        "body": [
+          "Appetizers",
+          "Salads",
+          "Pasta",
+          "Cocktails",
+          "Wine",
+          "Beer and Soft Drinks",
+          "Gluten-free pasta is available on any pasta dish for $3."
+        ],
+        "callsToAction": []
+      },
+      "layout": "Reference ritovex-04-services desktop, 1469x959. Its structure: a centred small label with glyph at y=11%, a centred 1-line display heading at y=14% to y=21%, a centred 2-line support paragraph at y=23% to y=29%, then four full-width rows from y=36% to y=99% separated by 1px hairlines at x=4% to x=96%. Each row is a 2-digit index at x=6%, a large title from x=10%, an optional 2-line description under the title across x=10% to x=55% when the row is expanded, and a 44px circular arrow control at x=93%; one expanded row carries an offset rotated media card about 22% of frame width sitting at x=57% to x=79% and overlapping the hairlines above and below it. Jimmy Seas keeps this row architecture exactly and maps it onto six courses. The centred label, heading and support paragraph keep their positions, with the gluten-free note as the support line. Each course is one row group: the 2-digit index becomes the course number, the large Young Serif title becomes the course name, and the row expands into that course's price list rather than a 2-line description. Inside an expanded course, each dish is a sub-row of name plus description on the left and price right-aligned at x=93%, with a 1px divider hairline under each dish row so price alignment reads cleanly; this is the only divider system on the page. Pasta and Beer and Soft Drinks run their dish rows full width across x=10% to x=93%; Appetizers, Salads, Cocktails and Wine run their dish rows in two columns of x=10% to x=48% and x=52% to x=93%. One offset media card is retained exactly as the reference, placed against the Pasta course, holding the linguini with clams photograph at 22% of frame width with the reference's slight rotation and overlap of the hairlines. Surfaces: the reference is near-black; Jimmy Seas renders this section on the light canvas with ink text, since the dark anchor is reserved for the specials feature and the footer. That hue inversion is the only identity change; row heights, hairline positions, index column, arrow control position and the offset card geometry are preserved. All six courses are expanded by default on every breakpoint; the arrow control is a jump link to that course anchor, not a disclosure that hides prices.",
+      "motion": {
+        "purpose": "explanation",
+        "trigger": "scroll_enter",
+        "behavior": "Each course row group reveals as one unit so dense price rows never flicker individually: opacity 0 to 1 with translateY 12px to 0, one observer per course group, threshold 0 and rootMargin 0px 0px 120px 0px, unobserved on first intersection. No stagger between dish rows. The offset media card against Pasta reveals with its course group, sliding 20px from its outer edge rather than rising, which ties it to the rows it overlaps. Courses already on screen at initialization stay visible.",
+        "durationMs": 500,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "Every course group and the offset card render visible in place with no transform."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "linguini_clams"
+      ],
+      "transformation": {
+        "compact": "Reference ritovex-04-services mobile, 944x1692: the same rows run full width with the index numeral inline before the course title, the arrow control right-aligned on the title line, and every row expanded showing its description. Jimmy Seas follows this: course number inline, course title at about 28px, all dish rows single column with the name and description left and the price right-aligned on the same line, hairline under each dish row, 44px minimum row height. The offset media card drops to a full-width 16:10 photo placed between the Pasta and Cocktails groups rather than overlapping, recorded as a responsive deviation. No course collapses and no price is hidden.",
+        "medium": "Rows full width with the index column retained; two-column dish layout only for Cocktails and Wine, everything else single column; the offset card sits inline at 40% width beside the Pasta rows.",
+        "expanded": "Full reference geometry: index column at 6%, hairline rows from 4% to 96%, two-column dish lists for the four short courses, full-width dish lists for Pasta and Beer, and the rotated offset media card overlapping the Pasta hairlines."
+      }
+    },
+    {
+      "id": "house_specials",
+      "layoutFamily": "feature",
+      "layoutCases": [
+        "avoora-03-work-4"
+      ],
+      "referenceDirectionId": "avoora-03-work-4",
+      "purpose": "Give the seafood house specials their own full-width moment and their prices, because they are what the kitchen is known for.",
+      "userQuestion": "If I only order one thing here, what should it be?",
+      "stage": "prove",
+      "dependencies": [
+        "menu_courses"
+      ],
+      "evidence": [
+        "House Specials items, descriptions and prices are carried verbatim from the existing menu",
+        "Photograph site/images/frutti-di-mare-pan.jpg is the restaurant's own"
+      ],
+      "copy": {
+        "heading": "House Specials",
+        "body": [
+          "Lobster Fra Diablo",
+          "Frutti di Mare",
+          "Zuppa di Pesce",
+          "Every special arrives in its pan with a house salad and fresh baked bread."
+        ],
+        "callsToAction": []
+      },
+      "layout": "Reference avoora-03-work-4 desktop, 1644x961. One full-bleed media card from x=2% to x=98%, y=8% to y=89%, radius about 20px, holding a single photograph edge to edge with a vertical slatted transition across its left 45%. Across the bottom of the card, inset 4% from each side and sitting 6% above the card's lower edge, runs a dark translucent label bar about 11% of the card height: at its left an index in parentheses, then the large title, then a 1px rule running to the right where a middot-separated list of tags sits. Jimmy Seas keeps this card and bar exactly. The photograph is the frutti di mare pan shot, full-bleed in the card; the reference's slatted left transition is dropped because it would distort real food photography, recorded as a deviation, and the left 45% instead carries a solid dark gradient-free scrim panel only behind the label bar so no text sits directly on the image. The label bar reads (01) House Specials at left, the 1px rule, and the three special names middot-separated at right. Beneath the card, inside the same dark band that anchors this section, the three specials run as full-width price rows from x=6% to x=94% at y=89% onward: name and description left, price right-aligned, hairline under each row, plus the single closing line about salad and bread. This section is the page's one dark surface before the footer. Section height about 110% of a 1080 viewport to accommodate the rows.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "scroll_enter",
+        "behavior": "The photograph is revealed through its own frame: the card clips the image while the image scales 1.06 to 1 and fades opacity 0 to 1, so the picture appears to settle into the frame rather than slide onto the page. 160ms later the label bar fades up with translateY 12px to 0, then the three price rows follow at 70ms stagger capped at 210ms. One observer for the card and one for the row group, threshold 0, rootMargin 0px 0px 120px 0px, both unobserved on first intersection. Only opacity and transform animate; no clip-path or filter animation.",
+        "durationMs": 700,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "Card, photograph, label bar and all three price rows render visible and final with no scale or translate."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "frutti_di_mare_pan"
+      ],
+      "transformation": {
+        "compact": "No verified mobile reference for avoora-03-work-4, so derived and to be visually tested: the card becomes a full-width 4:5 portrait crop of the same photograph with the same radius, the label bar stays pinned inside the card's lower edge but wraps to two lines, with (01) House Specials on the first line and the three names middot-separated on the second; the rule shortens to a 40px lead rule. The three price rows follow full width below the card, name and description left, price right-aligned on the same line. All prices and the closing line remain.",
+        "medium": "Card at full wrap width with a 16:10 crop, label bar on one line with the tag list truncating to two names plus the third wrapping, price rows full width beneath.",
+        "expanded": "Full reference geometry: 96%-wide card at 81% of viewport height, inset label bar with index, title, 1px rule and the three names at right, and the three price rows in the dark band beneath."
+      }
+    },
+    {
+      "id": "story",
+      "layoutFamily": "about",
+      "layoutCases": [
+        "meridian-03-introduction"
+      ],
+      "referenceDirectionId": "meridian-03-introduction",
+      "purpose": "Say who Jimmy Seas is and how long it has been on this street, so the menu reads as a place rather than a list.",
+      "userQuestion": "Who runs this and how long have they been here?",
+      "stage": "prove",
+      "dependencies": [
+        "house_specials"
+      ],
+      "evidence": [
+        "The garage origin, the 1994 move down the street and the cooked-to-order description are the restaurant's own existing copy",
+        "Photograph site/images/storefront.jpg is the restaurant's own",
+        "Garlic seal motto Eat garlic. Live, love, last longer. is the restaurant's existing mark copy"
+      ],
+      "copy": {
+        "eyebrow": "Our Story",
+        "heading": "It started in a garage on Kennebec Ave",
+        "body": [
+          "Jimmy Seas began as a tiny pasta spot in a garage on Kennebec Avenue and quickly became an island favorite. In 1994 we moved to a bigger space just down the street, and we have been serving pasta straight from the pan to locals, visitors and the occasional celebrity ever since.",
+          "Every dish is cooked to order and arrives in the same pan it was made in. Come hungry for big helpings of pan pasta, lobster fra diablo, frutti di mare and zuppa di pesce, and leave room for a cocktail.",
+          "Eat garlic. Live, love, last longer."
+        ],
+        "callsToAction": []
+      },
+      "layout": "Reference meridian-03-introduction desktop, 1506x1070. A large left photograph occupies x=2.5% to x=50%, y=2% to y=88%, so it is a tall near-3:4 block covering just under half the width and 86% of the section height, with one square-cut corner at its upper right, the corner nearest the text. The right column runs x=53% to x=94%: a small eyebrow with a short lead rule at y=8%, then an editorial serif heading from y=14% to y=40% set as exactly 3 lines at about 64px with generous leading, then a large empty gap, then a 5-line support paragraph low in the column at y=60% to y=75% at 16px, then a wide action button at y=81% to y=88% with a square icon tile at its right end. Jimmy Seas preserves that asymmetric high-heading, low-paragraph rhythm and the deliberate vertical gap. The photograph is the summer storefront in the locked notched frame with the square-cut corner at upper right. The eyebrow with lead rule reads Our Story. The heading keeps 3 lines at 64px. The two story paragraphs fill the low support block. The reference's action button is replaced by the garlic seal motto block in the same position and footprint: the seal at about 96px beside the three-line Young Serif motto, which keeps the reference's visual weight at the foot of the column without inventing a link that does not exist. That substitution is recorded as a deviation.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "scroll_enter",
+        "behavior": "The photograph and the copy arrive as a connected pair: the notched frame slides 24px inward from the left page edge while fading opacity 0 to 1, and simultaneously the eyebrow, heading, paragraphs and motto block rise translateY 16px to 0 at 70ms stagger capped at 210ms, so the text appears to be pulled in alongside the image. One observer for the media and one for the text group, threshold 0, rootMargin 0px 0px 120px 0px, both unobserved on first intersection so scrolling back up or resizing never replays or re-hides them.",
+        "durationMs": 720,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "Photograph and all copy render visible and in final position with no slide or rise."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "storefront_summer",
+        "garlic_seal_mark"
+      ],
+      "transformation": {
+        "compact": "Reference meridian-03-introduction mobile, 916x1750: image first at full width in a 4:3 crop keeping the square-cut corner at upper right, then the eyebrow with lead rule, then the heading at about 36px across 3 to 4 lines, then both paragraphs, then the motto block with the seal. The reference's deliberate desktop gap between heading and paragraph compresses to one spacing step on mobile, as the mobile reference itself does. Source order and all copy survive.",
+        "medium": "Two columns at a 45/55 split with the heading at about 48px and the vertical gap reduced to half the desktop value.",
+        "expanded": "Full reference geometry: 47%-wide notched photograph at 86% section height, heading as 3 lines at 64px high in the right column, paragraphs low at 60% to 75%, motto block at the column foot."
+      }
+    },
+    {
+      "id": "reviews",
+      "layoutFamily": "social_proof",
+      "layoutCases": [
+        "karo-template-08-testimonials-editorial"
+      ],
+      "referenceDirectionId": "karo-template-08-testimonials-editorial",
+      "purpose": "Let real guests say what to order and show the public rating they come from.",
+      "userQuestion": "Do other people think this is worth it, and what do they order?",
+      "stage": "prove",
+      "dependencies": [
+        "story"
+      ],
+      "evidence": [
+        "Google rating of 4.1 from 252 reviews, linked to the restaurant's Google Maps listing at maps.app.goo.gl/UQhvkVUmbTLp3fS27",
+        "Six verbatim Google review quotes from Jennifer F., Mayra C., Cindy N., Nanda F., Arthur B. and RJ H., attributions unchanged"
+      ],
+      "copy": {
+        "eyebrow": "What guests say",
+        "heading": "Order the soup. And the garlic. And the ravioli.",
+        "body": [
+          "The spicy seafood soup is one of the best soups I've ever had in my whole life. We finished every single drop. Order the soup.",
+          "Cindy N. Google review · 5★",
+          "4.1 · 252 reviews on Google",
+          "My new favorite spot on the island. Felt like I was in Nonna's kitchen cooking Italian for special family night.",
+          "Jennifer F. Google review · 5★",
+          "The red sauce mussels were delicious. Pastas were so flavorful. Bread was steaming hot.",
+          "Mayra C. Google review · 5★",
+          "Best butternut squash ravioli I've had. I want to drink the sauce.",
+          "Nanda F. Google review · 5★",
+          "Highly recommend the Roasted Garlic. It spreads like buttah!",
+          "Arthur B. Google review · 5★",
+          "I had the Tagliatelle Pomodoro and it was a true tomato pomodoro: big chunks of juicy and sweet garden tomatoes with a nice hint of garlic.",
+          "RJ H. Google review · 5★"
+        ],
+        "callsToAction": [
+          {
+            "label": "Read the reviews on Google",
+            "target": "https://maps.app.goo.gl/UQhvkVUmbTLp3fS27"
+          }
+        ]
+      },
+      "layout": "Reference karo-template-08-testimonials-editorial desktop, 1506x1070. Left rail from x=2% to x=19%: a large wordmark at y=4%, a 3-line description under it at y=9% to y=15%, a link list low at y=52% to y=66%, a second short list at y=71% to y=80%, and a wide surface button at y=86% to y=92%. Right area from x=22% to x=98%: a top row of three equal attribution cards, y=9% to y=21%, each a 1px-bordered panel holding a 56px circular avatar plus a name and an organisation in two lines, with the middle card tinted to show selection; below it a single large bordered quote panel from y=23% to y=67% containing a small centred meta line, a centred 4-line quote at about 40px, and a small centred source line; below that a row of three photographs y=68% to y=96% flush to each other. Jimmy Seas keeps this grid. Left rail: Young Serif Jimmy Seas wordmark, the eyebrow and a 2-line note placed as the description, and the rating as the low block, rendered as the accent-coloured 4.1, a text star row and 252 reviews on Google, wrapped in the link to the Maps listing; the reference's foot button becomes that same link styled as the surface button reading Read the reviews on Google. Top row of three cards becomes three attribution cards for Jennifer F., Mayra C. and Arthur B., each holding the reviewer initial in a 56px circle instead of a photograph, since no reviewer portraits exist and none may be invented; that substitution is recorded as a deviation. The large centre panel carries the Cindy N. soup quote as the oversized 4-line lead at 40px with the source line beneath. The bottom row of three photographs becomes three dish photographs that match quotes already shown: mussels, roasted garlic and cheese ravioli, flush to each other exactly as the reference. The remaining quotes from Nanda F. and RJ H. sit in the three attribution cards' expanded bodies on wide screens and as full quote rows on narrow screens, so all six real quotes appear.",
+      "motion": {
+        "purpose": "explanation",
+        "trigger": "scroll_enter",
+        "behavior": "The lead quote is established as the anchor before anything else: the large centre panel rises translateY 20px to 0 with opacity 0 to 1 first, then the rating block in the left rail fades up, then the three attribution cards enter at 70ms stagger, then the three bottom photographs at 70ms stagger, each group capped at 210ms. Four independent observers, threshold 0 and rootMargin 0px 0px 120px 0px, each unobserved on first intersection, so a section that is already partly on screen never hides what the reader can already see.",
+        "durationMs": 600,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "Lead quote, rating, all attribution cards and all three photographs render visible and final with no transform or stagger."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "mussels_white",
+        "roasted_garlic_bread",
+        "cheese_ravioli",
+        "garlic_seal_mark"
+      ],
+      "transformation": {
+        "compact": "Reference karo-template-08-testimonials-editorial mobile, 820x2000: the left rail content moves above the quote area, then the three attribution cards stack full width at about 11% of frame height each with the selected card tinted, then the large quote panel runs full width with the quote centred at about 30px across 7 lines, then the three photographs sit in a flush 3-up row at the foot exactly as the mobile reference. On this breakpoint the Nanda F. and RJ H. quotes render as two further full-width quote rows after the lead panel so all six remain readable. Rating link stays above the quotes, never below the fold of the section.",
+        "medium": "Left rail collapses into a header band holding the wordmark, eyebrow and rating link; the attribution cards go 2-up, the lead quote panel stays full width, the photograph row stays 3-up.",
+        "expanded": "Full reference geometry: 17%-wide left rail with the low rating block and foot link, 3-up attribution card row, oversized bordered lead quote panel, and the flush 3-up photograph row beneath."
+      }
+    },
+    {
+      "id": "gallery",
+      "layoutFamily": "feature",
+      "layoutCases": [
+        "lexedge-11-blog"
+      ],
+      "referenceDirectionId": "lexedge-11-blog",
+      "purpose": "Show the food and the room at scale so the decision is made on appetite, not description.",
+      "userQuestion": "What does the food and the room actually look like?",
+      "stage": "evaluate",
+      "dependencies": [
+        "reviews"
+      ],
+      "evidence": [
+        "All sixteen photographs are the restaurant's own files in site/images, with their existing captions and alt text"
+      ],
+      "copy": {
+        "eyebrow": "Gallery",
+        "heading": "From the stove to your table",
+        "body": [
+          "Vongole in White Sauce",
+          "Roasted Garlic and fresh bread",
+          "Shrimp Scampi",
+          "Frutti di Mare",
+          "The dining room",
+          "Lobster Ravioli",
+          "Cheese Ravioli",
+          "Steamed Mussels",
+          "East Chop Lighthouse, brewed on the Vineyard",
+          "Cocktails on the island",
+          "Little Italy Cafe",
+          "Ziti Bolognese",
+          "Scallops in pesto cream",
+          "Chicken, Broccoli and Ziti",
+          "Zuppa di Pesce",
+          "Cannoli"
+        ],
+        "callsToAction": []
+      },
+      "layout": "Reference lexedge-11-blog desktop, 1431x1017. A small centred label with a square glyph at y=10%, then a centred editorial serif heading at y=15% to y=27% set as exactly 2 lines, the first upright and the second italic, at about 46px. Below it a 2-up media row from x=2% to x=98%, y=33% to y=86%: two photographs of equal width at about 47% each with a 20px gutter, 16px radius, roughly 4:3 crops, each followed below the frame by a 13px muted meta line and then a 24px serif title, both left aligned to the frame and never overlaid on the image. Jimmy Seas keeps the centred label, the 2-line upright-plus-italic heading at the same scale and position, and the caption treatment of muted meta line above a serif title sitting outside and below each frame. The 2-up row is extended into the 16-image mosaic the content requires, recorded as a deviation in count only: the same 20px gutter and 16px radius carry into a 4-column mosaic where cells vary between 1x1, 1x2 tall and 2x1 wide so no two neighbours share a shape, with the first row reproducing the reference's exact 2-up pair of near-equal 4:3 photographs so the derivation stays visible. Captions under every cell use the reference's two-line pattern, with the dish name as the serif title and a short muted meta line above it. No cell carries an overlay, scrim or filter.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "scroll_enter",
+        "behavior": "Photographs are introduced as a short sequence rather than a block. Each figure is observed individually with threshold 0 and rootMargin 0px 0px 120px 0px, fades opacity 0 to 1 while its image scales 1.03 to 1 inside its own fixed frame so the frame never moves, and is unobserved on first intersection. Stagger is 70ms in DOM order and resets at every visual row, so total queued delay never exceeds 240ms and a fast scroll cannot build a backlog of invisible images. Figures on screen at initialization are never hidden.",
+        "durationMs": 540,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "Every figure and caption renders visible at full opacity and final scale with no sequence."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "linguini_clams",
+        "roasted_garlic_bread",
+        "shrimp_scampi",
+        "frutti_di_mare_pan",
+        "dining_room",
+        "lobster_ravioli",
+        "cheese_ravioli",
+        "mussels_white",
+        "east_chop_ale",
+        "cosmo_porch",
+        "sign_little_italy",
+        "ziti_bolognese",
+        "scallops_pesto",
+        "chicken_broccoli_ziti",
+        "frutti_di_mare",
+        "cannoli"
+      ],
+      "transformation": {
+        "compact": "Reference lexedge-11-blog mobile, 958x1797: centred label, heading at about 30px keeping the upright plus italic 2-line break, then one photograph per row at full width with its meta line and serif title below the frame. Jimmy Seas follows that exactly for the first two images, then continues the remaining fourteen as a 2-column mosaic with alternating tall cells so the section does not become an endless single file; every caption stays below its frame and all sixteen images remain present.",
+        "medium": "Three-column mosaic with the same gutter and radius, first row keeping the reference 2-up pair spanning the full width.",
+        "expanded": "Four-column mosaic with varied 1x1, 1x2 and 2x1 cells, the reference 2-up pair as the first row, 20px gutters and captions below every frame."
+      }
+    },
+    {
+      "id": "visit",
+      "layoutFamily": "cta",
+      "layoutCases": [
+        "avoora-12-contact"
+      ],
+      "referenceDirectionId": "avoora-12-contact",
+      "purpose": "Give the address, hours and phone in one place and close with the call and the directions link.",
+      "userQuestion": "Where is it, when is it open, and how do I get there or call?",
+      "stage": "act",
+      "dependencies": [
+        "gallery"
+      ],
+      "evidence": [
+        "Address, hours, season, phone number and Instagram handle are carried verbatim from the existing site and its JSON-LD Restaurant schema",
+        "Photograph site/images/storefront-winter.jpg is the restaurant's own"
+      ],
+      "copy": {
+        "eyebrow": "Visit",
+        "heading": "Find us on Kennebec Ave",
+        "body": [
+          "A short walk from the Oak Bluffs ferry terminal and Circuit Avenue, in the cottage with the flower boxes and the big garlic sign.",
+          "Address",
+          "32 Kennebec Ave, Oak Bluffs, MA 02557",
+          "Hours",
+          "Daily, 5 – 10 PM. Open seasonally, about Memorial Day to Thanksgiving.",
+          "Phone",
+          "(508) 687-9804",
+          "Follow",
+          "@jimmyseas_marthasvineyard"
+        ],
+        "callsToAction": [
+          {
+            "label": "Call (508) 687-9804",
+            "target": "tel:+15086879804"
+          },
+          {
+            "label": "Get directions on Google Maps",
+            "target": "https://maps.app.goo.gl/UQhvkVUmbTLp3fS27"
+          }
+        ]
+      },
+      "layout": "Reference avoora-12-contact desktop, 1506x1017. A centred display heading at y=11% to y=21% at about 52px on one line, a full-width hairline under it at y=23%, then a two-panel band from x=3% to x=97%, y=28% to y=93% on a tinted surface: the left panel (width about 45%) holds a small heading with a row of four square icon chips at its right, a hairline, then a 2-column block of a square photograph at about 40% panel width beside a heading plus a five-item marked list, then a hairline and two foot columns of label over value; the right panel (width about 42%) holds a heading, a one-line note and a stack of four controls ending in a full-width filled button. Jimmy Seas keeps the centred heading, the hairline, and the two-panel band with those proportions. Left panel: the eyebrow Visit with the Instagram handle as the single link chip at its right, hairline, then the winter storefront photograph in the locked notched frame at 40% of panel width with its square-cut corner at the side facing the copy, beside the walk-from-the-ferry paragraph, then a hairline and the foot columns carrying Address and Hours as label over value. Right panel: the reference's form stack is replaced by the remaining facts and the actions, since no form exists and none may be invented. It holds the heading Find us on Kennebec Ave, the Phone and Follow label-over-value rows in the reference's control positions at the same vertical rhythm and row height, then the accent-filled full-width Call (508) 687-9804 button in the reference's submit position, with Get directions on Google Maps as an outlined full-width secondary directly above it. That form-to-facts substitution is the one recorded deviation.",
+      "motion": {
+        "purpose": "spatial_continuity",
+        "trigger": "scroll_enter",
+        "behavior": "The two panels converge toward the centre line so the band reads as closing: the left panel translates 20px from the left edge and the right panel 20px from the right edge, both fading opacity 0 to 1, started together with the heading rising translateY 16px to 0 60ms earlier. Inside the left panel the notched photograph fades and slides with its own panel rather than separately, so nothing nests transforms. Two observers plus one for the heading, threshold 0, rootMargin 0px 0px 120px 0px, each unobserved on first intersection. Both action buttons are clickable from the first frame and are never gated behind the animation.",
+        "durationMs": 640,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "reducedMotion": "Heading, both panels, the photograph and both actions render visible and final with no slide."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "storefront_winter"
+      ],
+      "transformation": {
+        "compact": "Reference avoora-12-contact mobile, 666x1960: the centred heading sits at the top left-aligned across two lines, then the single tinted panel runs full width with the Instagram chip row, hairline, the notched photograph at full width, the walk-from-the-ferry paragraph, the Address and Hours label-over-value rows, a hairline, then the Phone and Follow rows and finally the two full-width buttons with the accent Call button last and largest, exactly where the reference puts its submit control. All four facts and both actions survive; only simultaneity drops.",
+        "medium": "Two panels retained at a 50/50 split with the photograph moving above the paragraph inside the left panel and the foot label columns stacking.",
+        "expanded": "Full reference geometry: centred one-line heading, hairline, 45/42 two-panel band, notched photograph at 40% of the left panel beside the paragraph, label-over-value foot columns, and the stacked secondary plus accent primary filling the right panel foot."
+      }
+    },
+    {
+      "id": "site_footer",
+      "layoutFamily": "footer",
+      "layoutCases": [
+        "obvia-13-footer"
+      ],
+      "referenceDirectionId": "obvia-13-footer",
+      "purpose": "Repeat the address and phone at the end of the scroll and close the page.",
+      "userQuestion": "If I scrolled past it, where do I find the address and number again?",
+      "stage": "continue",
+      "dependencies": [
+        "visit"
+      ],
+      "evidence": [
+        "Address and phone number carried verbatim from the existing site footer",
+        "Copyright year is rendered from the browser clock by the existing script"
+      ],
+      "copy": {
+        "heading": "Jimmy Seas Pan Pasta",
+        "body": [
+          "Pasta served in the pan it was cooked in. 32 Kennebec Ave, Oak Bluffs, Martha's Vineyard, MA 02557.",
+          "Explore",
+          "Social",
+          "Contact",
+          "32 Kennebec Ave, Oak Bluffs, MA 02557",
+          "OAK BLUFFS · MARTHA'S VINEYARD",
+          "© 2026 Jimmy Seas Pan Pasta",
+          "OPEN DAILY 5 – 10 PM IN SEASON",
+          "BACK TO TOP ↑"
+        ],
+        "callsToAction": [
+          {
+            "label": "Call (508) 687-9804",
+            "target": "tel:+15086879804"
+          },
+          {
+            "label": "Instagram @jimmyseas_marthasvineyard",
+            "target": "https://www.instagram.com/jimmyseas_marthasvineyard/"
+          },
+          {
+            "label": "Back to top",
+            "target": "#top"
+          }
+        ]
+      },
+      "layout": "Reference obvia-13-footer desktop, 1506x961. Dark full-bleed band. Wordmark at x=3%, y=13%, with a 3-line description under it at y=19% to y=27% across about 22% of width. Three link columns at x=61%, x=74% and x=85%, each with a 12px uppercase muted header at y=13% and its items from y=18% downward at 17px. A very large outline-weight wordmark runs across the lower third from x=3% to x=97%, y=63% to y=87%, at roughly 20% of frame height, rendered in a tone only slightly lighter than the background with one glyph in the accent colour. A full-width hairline at y=93% and a bottom row of five 12px uppercase monospace-feel items spread between x=3% and x=97%. Jimmy Seas keeps this exactly. Wordmark is Young Serif Jimmy Seas with the garlic seal; the description is the one-line proposition plus the address. Three columns: Explore holding the five section anchors, Social holding the Instagram link, Contact holding the phone link and the OAK BLUFFS · MARTHA'S VINEYARD line. The oversized lower wordmark reads JIMMY SEAS with the garlic seal substituted for the reference's accent glyph at the end of the word, at the same scale and tone relationship. Bottom hairline row carries the auto-updating copyright, OPEN DAILY 5 – 10 PM IN SEASON, and BACK TO TOP ↑ at the right. No photographs in this section.",
+      "motion": {
+        "purpose": "none",
+        "trigger": "none",
+        "behavior": "No entrance or scroll animation is planned for this section. The page's required motion is already carried by the hero load entrance and the seven distinct scroll reveals above, and a reveal on the final band would animate the last thing a reader reaches. Control feedback for the footer anchors, the phone link and Back to top is specified globally in interactions rather than as section motion, so this section declares no animation at all.",
+        "durationMs": 0,
+        "easing": "none",
+        "reducedMotion": "No change, because this section has no animation; every element is rendered in its final state at all times."
+      },
+      "componentNeeds": [],
+      "assetNeeds": [
+        "garlic_seal_mark"
+      ],
+      "transformation": {
+        "compact": "Reference obvia-13-footer mobile, 655x1995: wordmark and description at the top, then Explore and Social as a 2-column block, then Contact as its own block with the phone link and locality line, then the oversized JIMMY SEAS wordmark with the seal at reduced scale, then the hairline and the bottom items stacked one per line at 12px uppercase. All links and the address remain present.",
+        "medium": "Wordmark and description on the left, the three link columns compressed into two on the right, oversized wordmark retained at reduced scale, bottom row wrapping to two lines.",
+        "expanded": "Full reference geometry: wordmark plus 22%-wide description at left, three link columns at 61%, 74% and 85%, oversized JIMMY SEAS across the lower third, hairline and the five-item bottom row."
+      }
+    }
+  ],
+  "responsive": [
+    "Up to 767px: single column at 20px page padding. The sticky header holds the seal, wordmark, an always-visible accent Call pill and a Menu toggle that opens an inline anchor panel. The course nav is a sticky horizontally scrolling chip row with the active chip auto-centred. All menu courses stay expanded with one dish per row, name and description left, price right-aligned. Tap targets are at least 44px and section padding is 64px.",
+    "768px to 1023px: two-column compositions hold at 45/55 or 50/50 splits. The gallery runs a 3-column mosaic. The menu uses two-column dish lists only for Cocktails and Wine. The header shows all five anchors at 15px plus the Call pill and hides the wordmark subline.",
+    "1024px to 1279px: full reference splits with display type one step down, hero headline about 52px and section headings about 48px. The gallery runs 4 columns. The menu's offset media card sits inline beside the Pasta rows without overlapping the hairlines.",
+    "1280px and up: full reference geometry at the 1180px wrap. Hero at 42/46 with the 740px pan block and a 68px headline, specials card at 96% width, four-column gallery mosaic with 1x2 and 2x1 cells, visit at the 45/42 two-panel band, footer at the three-column plus oversized-wordmark layout.",
+    "prefers-color-scheme dark and data-theme dark: light surfaces swap to the dark token set independently rather than by inversion. The specials feature and the footer stay the darkest surfaces and keep their contrast relationship to the sections around them. Accent becomes the lighter sauce red for fills, focus rings and the active chip, with the derived lighter warm red used for accent-coloured text.",
+    "Any breakpoint: the phone number stays reachable, no price or hour is hidden behind a toggle or hover, and every image keeps explicit width and height so no layout shift occurs as the page loads."
+  ],
+  "interactions": [
+    "Course scroll-spy: an IntersectionObserver watches the six course groups plus the specials feature and marks the matching chip with accent text and a 2px underline, auto-centring it in the scrolling chip row. This observer is separate from every reveal observer and is never disconnected.",
+    "Header condense: past 80px of scroll the header transitions height, padding and subline opacity over 200ms. The header is never placed inside a transformed ancestor.",
+    "Control feedback: buttons and links across the page, including every footer anchor, the phone link and Back to top, transition background-color, border-color and a 1px translateY over 160ms on hover and active, on explicitly listed properties only. Focus-visible draws a 3px accent ring offset 3px with no transition.",
+    "Reveal lifecycle: hidden states are applied by script only to elements whose bounding rect is still below the viewport at initialization; CSS defaults every element to its final visible state and there is no global opacity:0 class. Each observed group uses threshold 0 with rootMargin 0px 0px 120px 0px and is unobserved on first intersection, so reveals run once and survive scroll-up, direction changes, resize and reload at a middle scroll position.",
+    "Reduced-motion switch: a change listener on the prefers-reduced-motion media query cancels only this script's own animations, disconnects the reveal observers, removes every hidden state and restores visibility. It never calls document.getAnimations().",
+    "No-script fallback: with JavaScript disabled every section, image, price and action renders fully visible. The course nav still scrolls horizontally and all anchors still work; only the active-chip highlight and the condensed header are absent."
+  ],
+  "acceptanceCriteria": [
+    "Every menu item, description and price, the hours, season, address, phone number, Instagram handle, the 4.1 rating with 252 reviews and all six named review quotes appear exactly as they do on the existing site.",
+    "All sixteen gallery photographs, the hero dish, both storefront photographs and the specials photograph come only from site/images and keep their existing alt text, explicit width and height, and lazy loading below the fold.",
+    "The accent appears as the Call button fill, the focus ring, the active course chip and the specials feature treatment, and nowhere else; no two course cards use different colours.",
+    "The hero pan is the only circular frame on the page, its handle sits at lower left, and the square-cut notch appears on exactly one corner of the story and visit photographs and nowhere else.",
+    "A visible hero entrance runs on load, and the strip, menu courses, specials, story, reviews, gallery and visit sections each reveal with their own distinct geometry rather than one shared fade-up.",
+    "After rapidly scrolling down and up twice, reloading at a middle scroll position, resizing, and toggling reduced motion during playback, every visited section remains visible and no reveal replays.",
+    "With prefers-reduced-motion set to reduce, every section renders at final opacity and position immediately and both the Call and directions actions remain usable.",
+    "With JavaScript disabled, no content is hidden anywhere on the page.",
+    "The phone number is reachable from any scroll position at every breakpoint and is never hidden behind a toggle, hover or off-canvas drawer.",
+    "All seven course chips are reachable on a 375px viewport and the active chip auto-centres as the reader scrolls the menu.",
+    "Every section is recognizably derived from its recorded reference: the hero matches ritovex-01-hero's 42/46 split with a dominant right media block, the menu matches ritovex-04-services' hairline row architecture with an offset media card, the specials match avoora-03-work-4's full-bleed card with an inset label bar, the story matches meridian-03-introduction's high-heading low-paragraph rhythm beside a tall notched photograph, and the footer matches obvia-13-footer's three link columns plus oversized wordmark.",
+    "Light and dark themes both pass contrast on text, controls and focus rings, and the dark theme is a real token set rather than an inversion.",
+    "The existing JSON-LD Restaurant schema, meta and OG tags, skip link and heading order are intact."
+  ]
+}
